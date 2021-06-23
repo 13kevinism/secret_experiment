@@ -30,9 +30,8 @@ class _PostPageState extends State<PostPage> {
       
      children: [
         TextField(
-          
-          keyboardType: TextInputType.multiline,
           maxLines: 36,
+          keyboardType: TextInputType.multiline,
           style: TextStyle(color: Color(0xFFEAEAEA)),
           controller: _controller,
           decoration: InputDecoration(
@@ -60,8 +59,7 @@ class _PostPageState extends State<PostPage> {
       future: _futurePost,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          Navigator.push(
-                context, MaterialPageRoute(builder: (context) => PostPage()));
+          Navigator.pop(context);
         } else if (snapshot.hasError) {
           return Text('${snapshot.error}');
         }
